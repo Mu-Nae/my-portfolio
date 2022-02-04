@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+
+/* assinging varibles at the start to be used in the file */
+
+:root {
+    --main-bg-color: #6c5ce7;
+    --black-color: #000;
+    --margin: 0px;
+    --padding: 0px;
+    --white-main-color: #fff;
+    --dark-gray-color: #1e272e;
+    --light-gray-color: #747474;
+    --very-light-gray-color: #f0f0f0;
+  }
+
+
+/* Scroll behaviour is a property of html that allows us to animate the scrolling function on the page */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+/* notice that we refernence the body and html with simply by naming them, we dont use # or . in this case, what other places dont
+we use .'s and #'s? */
+
+body { 
+
+    margin: var(--margin);
+    padding: var(--padding);
+    font-family: "Montserrat", sans-serif;  
+    box-sizing: border-box;
+
+}
+
+
+ /* used list style none to remove the bullet points*/ 
+
+
+ul { 
+
+    list-style: none;
+    
+    }
+ 
+    
+    /* text decoration was used to remove the underline */
+
+a {
+
+    text-decoration: none;
+}
+
+/* units */
+
+/* pixels = px --> non responsive
+percent = % --> is responsive
+fractional = fr --> is responsive
+view-width/view-height = vw/vh --> responsive */
+/* rem, em --> font relative units */
+
+/* by default => 1em/rem :16px */
+
+/* why dont we just call main like we do in with the body, why do we use #? */
+
+#main { 
+
+
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* flex puts the divs into horizontal alignment and justify content controls the spacing betweent he horizontal divs, 
+align items allows you to position the divs up or down, fixing something will make it static and allow it 
+to be present even as you scroll the screen */
+
+    nav {
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        background-color: var(--white-main-color);
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+
+    }
+
+    nav ul { 
+
+        display: flex;
+
+
+    }
+
+
+    /* how did we know that lane height of 43 was what we were supposed to use? */
+
+    nav ul li a {
+
+
+        margin: 3px;
+        padding: 0px 22px;
+        display: flex;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: #585b55;
+        letter-spacing: 1px;
+        font-size: 14px;
+        height: 40px;
+        line-height: 43px;
+
+
+    }
+
+    /* now we go onto seeing how if we hover on the navbar, how it changes */
+
+    nav ul li a:hover {
+
+        background-color: var(--main-bg-color);
+        color: #fff;
+        border-radius: 5px;
+
+    }
+
+/* border bottom is making a underline on the text and the solid is a pixel */
+
+    .get-in-touch { 
+
+
+        color: var(--dark-gray-color);
+        font-weight: 500;
+        font-size: 0.9em;
+        border-bottom: 2px solid var(--main-bg-color);
+
+    }
+    
+    .logo-heading {
+
+
+        font-weight: 300;
+        font-size: 25px;
+        color: var(--black-color);
+
+
+    }
+
+
+    /* notice that we used a different id for the name, so that we could style it differently */
+
+    .name {
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-color: var(--main-bg-color);
+      }
+
+
+      /* now we style the content, we choose how we want to display it, in this case we select flex, i dont know
+      why we used 90% for width, but im just copying it, need to also understand justify content and align items better */
+
+      .content { 
+
+        display: flex;
+        width: 90%;
+        justify-content: space-around;
+        align-items: center;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+
+      }
+
+      /* now we play with the model image, we gave it an id */
+
+      .model {
+
+        height: 500px;
+        width: 500px;
+        padding: 100px;
+
+      }
+
+
+      /* now we manipulate the image in the id model, but i dont really know why we useed object-fit and contain  */
+      
+      .model img {
+
+        width: 500px;
+        height: 500px;
+        object-fit: contain;
+        border-radius: 10px;
+
+      }
+      
+      .main-text h1 { 
+
+        font-size: 50px;
+        line-height: 60px;
+        margin: 0px 0px 10px 0px;
+      }
+
+        .main-text p {
+
+            color: var(--light-gray-color);
+
+        }
+
+        .portfolio-button {
+
+            width: 200px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: var(--main-bg-color);
+            color: var(--white-main-color);
+        }
+
+        /* now we go onto the skills section */
+
+        #skills {
+            display: flex; 
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            margin: auto auto 50px auto;
+          }
+
+          .skill-img {
+            width: 3px;
+            height: 3px;
+          }
+          
+          .skill-img img {
+            width: 5%;
+            height: 5%;
+            object-fit: contain;
+          }
+          
+          .skill-text {
+            width: 40%;
+          }
+          
+
+          .skill-heading span {
+            color: var(--main-bg-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: 1px;
+          }
+          
+          .skill-heading h2 {
+            color: var(--dark-gray-color);
+            font-size: 45px;
+            margin: 0px;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+          
+          .s-box-container {
+            margin-top: 15px;
+          }
+          
+          .skill-box {
+            display: flex;
+            margin: 25px 0px;
+          }
+          
+          .s-box-icon {
+            margin-right: 15px;
+          }
+          
+          .s-box-icon i {
+            font-size: 25px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--very-light-gray-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--main-bg-color);
+          }
+          
+          .s-box-text strong {
+            color: var(--dark-gray-color);
+            margin: 0px;
+            font-size: 15px;
+            font-weight: 600;
+          }
+          
+          .s-box-text p {
+            font-size: 15px;
+          }
+
+
+          /* now we style the projects section */
+
+
+          /* we took the top text and aligned it to the center of the page */ 
+
+          #my-projects { 
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            margin: auto auto 50px auto;
+            flex-direction: column;
+
+
+
+          }
+
+          .project-showcase { 
+
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            
+
+          }
+
+
+          .project {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            flex-direction: column;
+            margin: 30px 0px;
+          }
+
+        
+          .one { 
+
+            background-image: url(Images/company1.jpeg);
+            background-size: contain;
+
+          }
+
+          .two {
+            background-image: url(Images/company2.jpeg);
+            background-size: contain;
+          }
+          
+          .three {
+            background-image: url(Images/company3.jpeg);
+            background-size: contain;
+          }
+          
+          .project #hide {
+            visibility: hidden;
+            background-color: var(--white-main-color);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 15px;
+            opacity: 100%;
+            z-index: 1000;
+          }
+          
+          .project:hover #hide {
+            visibility: visible;
+            border: 1px solid var(--main-bg-color);
+          }
+          
+          .project-text {
+            color: var(--dark-gray-color);
+            font-size: 18px;
+            padding: 20px;
+            justify-content: space-evenly;
+          }
+          .project-btn {
+            background-color: var(--black-color);
+            color: var(--white-main-color);
+            border: 1px solid var(--main-bg-color);
+            border-radius: 10px;
+            padding: 15px;
+          }
+          
+          .project-btn:hover {
+            background-color: var(--white-main-color);
+            color: var(--black-color);
+            cursor: pointer;
+          }
+
+
+
+
+
+/* this is where we will style the cleint testimonial section */
+
+#client { 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: auto auto 50px auto;
+  padding: 50px 0px;
+
+} 
+
+
+
+
+.c-box-container { 
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+  
+
+
+}
+
+
+.client-box {
+
+  align-items: center;
+  display: flex;
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: 20px;
+  background-color: var(--main-bg-color);
+  color: var(--black-color);
+
+
+
+}
+
+
+.client-box img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--white-main-color);
+  object-fit: contain;
+  border: 1px solid var(--white-main-color);
+}
+
+
+.client-box p {
+
+    color: var(--white-main-color);
+    text-align: center;
+    margin: 10px 0px;
+    font-size: 14px;
+
+
+
+}
+
+
+/* why could we not align text in the center, why did we have to use flex? */
+
+.client-box a {
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 190px;
+  height: 45px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: var(--white-main-color);
+  color: var(--black-color);
+  border: 1px solid white;
+
+}
+/* now we style the contact us section, we seem to be using the flex display a lot */
+
+.client-box a:hover {
+
+
+  color: #fff;
+  background-color: var(--black-color);
+  border: 1px solid white;
+}
+
+
+.star {
+  display: flex;
+  margin: 10px 0px 0px 0px;
+}
+
+.star i {
+  color: gold;
+  font-size: 20px;
+}
+
+
+#contact { 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+  margin: auto auto 50px auto;
+
+}
+
+
+/* margin increases the distance between the two elemets in the file */ 
+
+#contact h3 {
+
+        font-size: 32px;
+        margin: 20px;
+
+
+     }     
+
+
+
+/* when do we use % and when do we use px ? */ 
+
+.contact-input { 
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: var(--white-main-color);
+
+
+}
+
+/*this is to style the email input bar basically */ 
+
+.contact-input input { 
+
+
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        text-align: center;
+        color: var(--dark-gray-color);
+
+
+}
+
+.contact-input a {
+
+    width: 200px;
+    height: 40px;
+    background-color: var(--main-bg-color);
+    color: var(--white-main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: auto 10px;
+    font-size: 14px;
+
+
+
+
+
+
+
+
+
+}
+
+/* border top is to add a line and we tell the browser how thick we want it to be with pixel numbers */
+
+          .footer { 
+
+            display:flex;
+            justify-content: space-around;
+            border-top: 1px solid var(--main-bg-color);
+
+          }
+
+
+        .footer span {
+
+          font-weight: 400;
+          text-decoration: none;
+          text-decoration-color: var(--main-bg-color);
+
+        }
+
+          .footer p {
+
+            margin: 15px 0px;
+            color: var(--black-color)
+
+          }
